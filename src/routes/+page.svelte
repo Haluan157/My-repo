@@ -1,20 +1,14 @@
-<!-- src/routes/index.svelte -->
 <script>
-  import Text from './text.svelte'
-  let a = 1;
-  $:out= a*2;
+  import { titleStore } from '$lib/titleStore';
+  export let data;
+  $: $titleStore = data.title;
+  const li =[{a:"Matematika",f:"#"}]
 </script>
-<sveltekit:head>
-  <title>apa</title>
-</sveltekit:head>
-
-<button class="add {a===1 ? "bg-black":"bg-blue-300"} focus:outline-none focus:ring focus:border-blue-100" on:click={() => a+=1}>{a}</button><br>
-<button class="add bg-black" on:click={() => a=1}>reset</button><br>
-<button class="add bg-black" on:click={() => a=100}>to 100</button>
-<Text tex={out}/>
-<Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/><Text tex={out}/>
-<style>
-  .add{
-  @apply w-24 text-white m-2 rounded-full active:bg-red-300;
-  }
-</style>
+<h1 class="font-bold text-2xl">Repositoriku</h1>
+<p class="mt-2">Di web ini, kamu akan menemukan file repositori dari akun github seseorang dengan username Haluan157. Beliau adalah alumni dari salah satu SDN yang ada di Sleman, alumni dari salah satu SMPN yang ada di Bantul, dan saat ini, beliau sedang bersekolah di salah satu SMAN yang ada di Bantul. <a href="https://github.com/Haluan157" target="_blank" class="link">Akun Github Beliau</a>.</p><br>
+<h2 class="font-bold text-xl">Repositori beliau:</h2>
+<ul class="list-disc mx-8">
+{#each li as li}
+<li><a href={li.f} class="link">{li.a}</a></li>
+{/each}
+</ul>

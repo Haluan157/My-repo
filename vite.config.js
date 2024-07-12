@@ -5,5 +5,10 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	server: {
 	  port: 4378,
+	  fs: {
+      allow: [
+        './'
+      ],
+    },
 	},
 });
