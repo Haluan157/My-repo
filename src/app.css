@@ -3,4 +3,4 @@
 @tailwind components;
 @tailwind utilities;
 * {@apply text-white font-lato;}
-.link {@apply after:content-['_↗'] text-orange-400 hover:text-lime-300 active:text-amber-300;}
+.link {@apply after:content-['↗'] text-orange-400 hover:text-lime-300 active:text-amber-300;}
