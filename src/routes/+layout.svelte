@@ -2,10 +2,12 @@
   import { version } from "../../package.json"
 </script>
 <script>
+  import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import '../app.css';
 	import Head from './head.svelte'
 	import { titleStore } from '$lib/titleStore';
 	$: $titleStore;
+	injectSpeedInsights();
 </script>
 <sveltekit:head>
   <title>{$titleStore}</title>

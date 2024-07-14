@@ -9,6 +9,7 @@
         let temp = b;
         b = a % b;
         a = temp;
+        console.log({a,b,temp})
     }
     return a;
 }
