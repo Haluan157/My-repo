@@ -9,13 +9,13 @@
         let temp = b;
         b = a % b;
         a = temp;
-        console.log({a,b,temp})
     }
     return a;
 }
 const lcm = (a, b) => (a * b) / gcd(a, b);
 $: KPK = str.reduce((aha, hyhy) => lcm(aha, hyhy));
 $: FPB = str.reduce((aha, hyhy) => gcd(aha, hyhy));
+const fay = (value) => Number.isNaN(Number(value))
 </script>
 <h1 class="font-bold text-xl">KPK dan FPB</h1>
 <p class="mt-2">Di halaman ini, kamu dapat menghitung KPK dan FPB secara instan.</p>
@@ -23,6 +23,6 @@ $: FPB = str.reduce((aha, hyhy) => gcd(aha, hyhy));
 <div class="flex justify-center">
 <div class="bg-slate-600 bg-opacity-80 grid justify-center rounded-lg text-center p-4">
   <input type="text" class="px-2 bg-white rounded-full outline-none ring ring-yellow-300 text-black placeholder:text-gray-600/80" placeholder="Masukkan Angka" bind:value={a}>
-  <p class="mt-2">KPK = {KPK} FPB = {FPB}</p>
+  <p class="mt-2">{fay(KPK) || KPK == 0 ? 'Masukkan angka':'KPK = '+KPK+' FPB = '+FPB}</p>
 </div>
 </div>
