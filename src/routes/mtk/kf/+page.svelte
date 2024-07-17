@@ -15,7 +15,7 @@
 	const lcm = (a, b) => (a * b) / gcd(a, b);
 	$: KPK = str.reduce((aha, hyhy) => lcm(aha, hyhy));
 	$: FPB = str.reduce((aha, hyhy) => gcd(aha, hyhy));
-	const fay = (value) => Number.isNaN(Number(value));
+  const handleInput = (event) => a = event.target.value.replace(/[^0-9,]/g, '');
 </script>
 
 <h1 class="font-bold text-xl">KPK dan FPB</h1>
@@ -25,11 +25,12 @@
 <div class="flex justify-center">
 	<div class="bg-slate-600 bg-opacity-80 grid justify-center rounded-lg text-center p-4">
 		<input
-			type="number"
+			type="text"
 			class="px-2 bg-white rounded-full outline-none ring ring-yellow-300 text-black placeholder:text-gray-600/80"
 			placeholder="Masukkan Angka"
 			bind:value={a}
+			on:input={handleInput}
 		/>
-		<p class="mt-2">{fay(KPK) || KPK == 0 ? 'Masukkan angka' : 'KPK = ' + KPK + ' FPB = ' + FPB}</p>
+		<p class="mt-2">{KPK === 0 ? "Masukkan Angka":"KPK = "+KPK+" FPB = "+FPB}</p>
 	</div>
 </div>
