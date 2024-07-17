@@ -1,6 +1,6 @@
 export function load() {
-  return {
-    title: 'My Reposity'
-  };
-};
+	return {
+		title: 'My Reposity'
+	};
+}
 export const prerender = true;

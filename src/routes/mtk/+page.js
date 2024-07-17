@@ -1,6 +1,6 @@
 export function load() {
-  return {
-    title: 'Math Easy'
-  };
-};
+	return {
+		title: 'Math Easy'
+	};
+}
 export const prerender = true;

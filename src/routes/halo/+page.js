@@ -1,6 +1,6 @@
 export function load() {
 	return {
-		title: 'KPK dan FPB'
+		title: 'Kuis Asmaul Husna'
 	};
 }
 export const prerender = true;
