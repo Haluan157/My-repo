@@ -4,6 +4,7 @@
 	$: $titleStore = data.title;
 	const li = [
 		{ a: 'KPK dan FPB', f: 'kf' },
+		{ a: 'Mencari Bilangan Prima', f: 'Prym' },
 		{ a: 'Keliling dan Luas (in development)', f: '#' },
 		{ a: 'Luas dan Volume (in development)', f: '#' }
 	];

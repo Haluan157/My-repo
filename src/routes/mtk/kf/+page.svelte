@@ -15,7 +15,7 @@
 	const lcm = (a, b) => (a * b) / gcd(a, b);
 	$: KPK = str.reduce((aha, hyhy) => lcm(aha, hyhy));
 	$: FPB = str.reduce((aha, hyhy) => gcd(aha, hyhy));
-  const handleInput = (event) => a = event.target.value.replace(/[^0-9,]/g, '');
+	const handleInput = (event) => (a = event.target.value.replace(/[^0-9,]/g, ''));
 </script>
 
 <h1 class="font-bold text-xl">KPK dan FPB</h1>
@@ -31,6 +31,6 @@
 			bind:value={a}
 			on:input={handleInput}
 		/>
-		<p class="mt-2">{KPK === 0 ? "Masukkan Angka":"KPK = "+KPK+" FPB = "+FPB}</p>
+		<p class="mt-2">{KPK === 0 ? 'Masukkan Angka' : 'KPK = ' + KPK + ' FPB = ' + FPB}</p>
 	</div>
 </div>
