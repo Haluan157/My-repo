@@ -1,7 +1,6 @@
 <script>
 	import { titleStore } from '$lib/titleStore';
-	export let data;
-	$: $titleStore = data.title;
+	$titleStore = 'Math Easy';
 	const li = [
 		{ a: 'KPK dan FPB', f: 'kf' },
 		{ a: 'Mencari Bilangan Prima', f: 'Prym' },

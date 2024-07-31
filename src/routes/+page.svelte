@@ -1,7 +1,6 @@
 <script>
 	import { titleStore } from '$lib/titleStore';
-	export let data;
-	$: $titleStore = data.title;
+	$titleStore = "My Reposity";
 	const li = [
 		{ a: 'Matematika', f: 'mtk' },
 		{ a: 'Kuis Asmaul husna', f: 'halo' }

@@ -3,10 +3,9 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte';
+  import { onMount } from 'svelte';
 	import { titleStore } from '$lib/titleStore';
-	export let data;
-	$: $titleStore = data.title;
+	$titleStore = 'Kuis Asmaul Husna';
 	const random = () => Math.floor(Math.random() * 99);
 	let rand, rands1, rands2, rands3;
 	let kesempatan = 3,

@@ -1,7 +1,6 @@
 <script>
 	import { titleStore } from '$lib/titleStore';
-	export let data;
-	$: $titleStore = data.title;
+	$titleStore = 'Mencari Bilangan Prima';
 	let a = '';
 	let hasil = 'Masukkan Angka';
 	const prym = (f) => {
@@ -17,10 +16,10 @@
 				? 'Angka ' + f + ' tidak termasuk bilangan prima'
 				: 'Angka ' + f + ' adalah bilangan prima';
 	};
-	const handleInput = (event) => (a = event.target.value.replace(/[^0-9,]/g, ''));
+	const handleInput = (event) => (a = event.target.value.replace(/[^0-9]/g, ''));
 </script>
 
-<h1 class="font-bold text-xl">{data.title}</h1>
+<h1 class="font-bold text-xl">{$titleStore}</h1>
 <p class="mt-2">Di halaman ini, kamu dapat mencari bilangan prima dengan instan.</p>
 <p class="mt-2">Masukkan angka dengan cara: 23 (masukkan angkanya saja)</p>
 <br />
@@ -31,6 +30,7 @@
 		placeholder="Masukkan Angka"
 		bind:value={a}
 		on:input={handleInput}
+		inputmode="numeric"
 	/>
 	<button class="w-24 rounded-full bg-amber-600 mt-4 active:bg-opacity-80" on:click={prym(a)}
 		>Cari</button
