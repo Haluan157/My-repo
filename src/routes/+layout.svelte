@@ -34,7 +34,7 @@
   <header class="sticky top-0">
     <div class="bg-slate-600 bg-opacity-80 backdrop-blur-sm py-2 text-center">
       <h1 class="text-white font-kanit font-medium">{$titleStore}</h1>
-      <span class="text-sm">{text}</span><button on:click={haha}> hapus</button>
+      <span class="text-sm">{text}</span><button class="w-24 rounded-full bg-amber-600 ml-4 active:bg-opacity-80" on:click={haha}> hapus</button>
     </div>
   </header>
 
