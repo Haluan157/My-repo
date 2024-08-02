@@ -4,7 +4,10 @@
 
 <script>
   import { onMount } from 'svelte';
-	import { titleStore } from '$lib/titleStore';
+	import { titleStore, ah, up, inn } from '$lib/titleStore';
+	/** @type {import('./$types').PageData} */
+  export let data;
+  let loady = true
 	$titleStore = 'Kuis Asmaul Husna';
 	const random = () => Math.floor(Math.random() * 99);
 	let rand, rands1, rands2, rands3;
@@ -12,7 +15,10 @@
 		skor = 0;
 	let highScore = 0;
 
-	onMount(() => {
+	onMount(async () => {
+	  if (data.topScores) {
+      loady = false;
+    }
 		highScore = Number(localStorage.getItem('highScore')) || 0;
 	});
 
@@ -41,6 +47,24 @@
 		}
 		rand, rands1, rands2, (rands3 = random()), random(), random(), random();
 	}
+	$: hh = data.topScores
+	$: a = localStorage.getItem("namaa").toUpperCase() || ""
+	$: ch3k = hh.find(obj => obj.nama === a)
+  $: if (kesempatan==0) {
+    (async () => {
+      try{
+      if (!ch3k) {
+        const result2 = await inn(a, skor)
+      } else if (ch3k.skor < skor) {
+      const result1 = await up(a,skor);
+      } else {
+        console.log("no")
+      }
+      const result3 = await ah()
+    } catch (error) {
+      console.error(error)
+    }})();
+  }
 </script>
 
 <p>Skor Tertinggimu = {highScore}</p>
@@ -59,6 +83,32 @@
 		<span>Skor = {skor}</span>
 		<span>Kesempatan = {kesempatan} kali</span>
 	{/if}
+{#if loady}
+<p>loading...</p>
+{:else}
+{#if data.topScores && data.topScores.length > 0}
+  <table border="1" class="border border-white">
+    <thead>
+      <tr>
+        <th class="border border-white">No</th>
+        <th class="border border-white">Nama</th>
+        <th class="border border-white">Skor</th>
+      </tr>
+    </thead>
+    <tbody>
+    {#each data.topScores as score, n}
+      <tr>
+      <th class="border border-white">{n+1}</th>
+        <th class="border border-white">{score.nama}</th>
+        <th class="border border-white">{score.skor}</th>
+    </tr>
+    {/each}
+    </tbody>
+  </table>
+{:else}
+  <p>Belum ada skor</p>
+{/if}
+{/if}
 </div>
 
 <style>
