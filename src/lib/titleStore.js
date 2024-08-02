@@ -19,18 +19,4 @@ export async function up(nama, angka) {
   }
 }
 
-export async function ah() {
-  try {
-    await sql`DELETE FROM scores
-WHERE nama NOT IN (
-    SELECT nama FROM scores
-    ORDER BY skor DESC
-    LIMIT 10
-);`
-  } catch (error) {
-    console.error('Error fetching scores:', error);
-  }
-}
-
-
 export const titleStore = writable('');

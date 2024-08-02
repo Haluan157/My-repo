@@ -4,7 +4,7 @@
 
 <script>
   import { onMount } from 'svelte';
-	import { titleStore, ah, up, inn } from '$lib/titleStore';
+	import { titleStore, up, inn } from '$lib/titleStore';
 	/** @type {import('./$types').PageData} */
   export let data;
   let loady = true
@@ -60,7 +60,6 @@
       } else {
         console.log("no")
       }
-      const result3 = await ah()
     } catch (error) {
       console.error(error)
     }})();
